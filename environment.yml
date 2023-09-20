@@ -1,0 +1,17 @@
+name: Python-Lite
+
+channels:
+  - conda-forge
+      
+dependencies:
+  - python=3.10
+  - numpy
+  - scipy
+  - scikit-image
+  - pandas
+  - opencv
+  - joblib
+  - matplotlib-base
+  - pip:
+    - napari[all]
+    - spyder
