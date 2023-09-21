@@ -12,6 +12,7 @@ dependencies:
   - opencv
   - joblib
   - matplotlib-base
+  - pyyaml
   - pip
   - pip:
     - napari[all]
