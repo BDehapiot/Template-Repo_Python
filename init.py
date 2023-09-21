@@ -20,11 +20,19 @@ def replace_placeholders(file_path):
         txt = file.read()
 
     # Replace placeholders
-    txt = txt.replace("{{ env_name }}", ENV_NAME)
+    txt = txt.replace("{{ repo_name }}", REPO_NAME)
     txt = txt.replace("{{ env_name }}", ENV_NAME)
 
     # Update file
     with open(file_path, "w") as file:
         file.write(txt)
 
-replace_placeholders(Path(ROOT_PATH / "environment.yml"))
+replace_placeholders(Path(ROOT_PATH / "environment - Copie.yml"))
+replace_placeholders(Path(ROOT_PATH / "README - Copie.md"))
+
+#%% Setup conda environment ---------------------------------------------------
+
+subprocess.run(
+    ["mamba", "env", "create", "-f", "environment.yml"], 
+    shell=True
+    )

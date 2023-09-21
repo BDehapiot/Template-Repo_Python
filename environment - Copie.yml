@@ -1,4 +1,4 @@
-name: Python_Lite
+name: Python-Lite
 
 channels:
   - conda-forge
@@ -12,7 +12,6 @@ dependencies:
   - opencv
   - joblib
   - matplotlib-base
-  - pip
   - pip:
     - napari[all]
     - spyder
