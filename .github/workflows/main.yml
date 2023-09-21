@@ -1,3 +1,8 @@
+- name: List files and print working directory
+  run: |
+    ls -R
+    pwd
+
 name: Update repository
 
 on:
