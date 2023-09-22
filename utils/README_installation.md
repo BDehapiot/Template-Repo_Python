@@ -3,7 +3,6 @@
 This is a step by step guide to 
 
 #### Download GitHub repository:  
----
 
 1) Download GitHub repository
 ([link](https://github.com/BDehapiot/ETH-ScopeM_CZITools/archive/refs/heads/main.zip)) 
@@ -11,7 +10,6 @@ This is a step by step guide to
 2) Unzip folder to a known location (e.g. `C:\Users\YourUsername\Desktop`)
 
 #### Install Mambaforge:  
----
 
 3) Download Mambaforge installer for Windows
 ([link](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe))  
@@ -21,7 +19,6 @@ This is a step by step guide to
     - add Miniforge3 to PATH environment variable  
 
 #### Setup Mamba/Conda environment: 
----
 
 5) Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder)  <br>
 <br>The prompt should look like this:  
@@ -55,7 +52,6 @@ This is a step by step guide to
     ```
 
 #### Setup Spyder IDE: 
----
 
 <hr style=\"border-top: 1px\">
 </details>
