@@ -18,8 +18,8 @@
 
 ### Setup Mamba/Conda environment: 
 
-5) Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder)  
-The prompt should look like this:  
+5) Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder)  <br>
+<br>The prompt should look like this:  
     ```bash
     (base) PS C:\Users\YourUsername>
     ```
@@ -49,7 +49,7 @@ The prompt should look like this:
     ({{ env_name }}) PS C:\Users\YourUsername>\Desktop\{{ repo_name }}-main
     ```
 
-### Start & setup Spyder IDE: 
+### Setup Spyder IDE: 
 
 <hr style=\"border-top: 1px\">
 </details>
