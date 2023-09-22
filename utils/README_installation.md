@@ -1,4 +1,4 @@
-<details> <summary>Windows</summary>  <br>
+<details> <summary>Windows</summary>  
 <br>This is a step by step guide to 
 
 #### Download GitHub repository:  
@@ -19,7 +19,7 @@
 
 #### Setup Mamba/Conda environment: 
 
-5) Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder)  <br>
+5) Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder)  
 <br>The prompt should look like this:  
     ```bash
     (base) PS C:\Users\YourUsername>
