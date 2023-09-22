@@ -1,8 +1,10 @@
 <details> <summary>Windows</summary>  
-<br>This is a step by step guide to install Python using the Mamba/Conda
+<br>This is a step by step guide to install Python and Spyder using the Mamba/Conda
 environment manager.  
 
-While all steps are required to complete installation, only steps 5, 6, 8, 9 will be later necessary to 
+Spyder is an Integrated Development Interface (IDE) to interact with Python codes.
+
+While all steps are required to complete installation, only steps 5, 8 and 9 will be later necessary to start Spyder in the good environment. 
 
 ### Download GitHub repository:  
 
@@ -66,5 +68,5 @@ While all steps are required to complete installation, only steps 5, 6, 8, 9 wil
     - Select the GitHub repository using the folder icon
     - Click the `Create` button  
 
-    Note: Re-open your project using `Projects` > `Recent Projects...`
+    You can re-open your project later using `Projects` > `Recent Projects...`
 </details>  
