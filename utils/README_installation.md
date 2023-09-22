@@ -15,13 +15,15 @@
 ### 3 - Setup mamba/conda environment: 
 
 5) Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder)  
-The prompt should look like this:  
+<br>
+The prompt should look like this: 
     ```bash
     (base) PS C:\Users\YourUsername>
     ```
-    feef
+    `(base)` at the beginning of the prompt means that you are in your base environment
+<br><br>
 
-- Move to the downloaded GitHub repository using the `cd` command: 
+6) Move to the downloaded GitHub repository using the `cd` command: 
 ```bash
 cd Desktop/{{ repo_name }}-main
 ```
