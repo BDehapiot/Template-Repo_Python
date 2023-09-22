@@ -16,7 +16,7 @@
 
 5) Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder)  
 <br>
-The prompt should look like this: 
+The prompt should look like this:  
     ```bash
     (base) PS C:\Users\YourUsername>
     ```
