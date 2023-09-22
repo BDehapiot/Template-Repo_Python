@@ -88,7 +88,7 @@ Please select your operating system:
 
 3) Download Mambaforge installer for MacOS 
 ([legacy](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-x86_64.sh))
-([M-Series](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-x86_64.sh))    
+([M-Series](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh))    
 
 4) Open your terminal (typing 'terminal' in `Launchpad` or `Spotlight search`)  
 <br>The prompt should look like this:
@@ -100,7 +100,7 @@ Please select your operating system:
     ```bash
     cd ~/Downloads
     ```
-6) Run the script using the following `bash` command followed by the name of the `.sh` you downloaded:  
+6) Run the script using the following `bash` command followed by the name of the file `.sh` you downloaded:  
     Legacy
     ```bash
     bash Miniforge3-MacOSX-x86_64.sh
