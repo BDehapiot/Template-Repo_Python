@@ -5,7 +5,7 @@
 
 # Template-Repo_Python-Lite
 ## Description
-{{ description }}
+
 ## Installation
 <details> <summary>Windows</summary>  
 <br>This is a step by step guide to install Python using the Mamba/Conda
