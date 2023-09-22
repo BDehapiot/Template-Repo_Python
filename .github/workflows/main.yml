@@ -41,5 +41,6 @@ jobs:
         git add -A
         git commit -m "update" || exit 0
         git pull --rebase
+        git push origin "HEAD:${{ github.ref }}" --follow-tags
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
