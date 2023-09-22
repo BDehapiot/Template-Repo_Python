@@ -41,7 +41,9 @@ print(pip_dependencies_str)
 with open(Path(root_path / "utils" / "README_installation.md"), "r") as file:
     installation = file.read()
 
-print(installation)
+# Replace placeholders
+installation = installation.replace("{{ repo_name }}", repo_name)
+installation = installation.replace("{{ env_name }}", env_name)
 
 #%% Update README -------------------------------------------------------------
 

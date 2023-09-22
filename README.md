@@ -29,6 +29,7 @@
 
 5) Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder)  
 <br>The prompt should look like this:  
+`(base) PS C:\Users\YourUsername>`
     ```bash
     (base) PS C:\Users\YourUsername>
     ```
@@ -36,11 +37,11 @@
 
 6) Move to the downloaded GitHub repository using the `cd` command: 
     ```bash
-    cd Desktop/{{ repo_name }}-main
+    cd Desktop/Template-Repo_Python-Lite-main
     ```
     The prompt should change to reflect your current location:
     ```bash
-    (base) PS C:\Users\YourUsername>\Desktop\{{ repo_name }}-main
+    (base) PS C:\Users\YourUsername\Desktop\Template-Repo_Python-Lite-main>
     ```
 
 7) Create a new Mamba/Conda environment: 
@@ -50,12 +51,12 @@
 
 8) Activate the newly created environment:
     ```bash
-    mamba activate {{ env_name }}
+    mamba activate Python-Lite
     ```
 
-    The prompt should now start with `({{ env_name }})`
+    The prompt should now start with `(Python-Lite)`
     ```bash
-    ({{ env_name }}) PS C:\Users\YourUsername>\Desktop\{{ repo_name }}-main
+    (Python-Lite) PS C:\Users\YourUsername\Desktop\Template-Repo_Python-Lite-main>
     ```
 
 #### Setup Spyder IDE: 

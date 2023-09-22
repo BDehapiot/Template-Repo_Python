@@ -21,6 +21,7 @@
 
 5) Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder)  
 <br>The prompt should look like this:  
+`(base) PS C:\Users\YourUsername>`
     ```bash
     (base) PS C:\Users\YourUsername>
     ```
@@ -32,7 +33,7 @@
     ```
     The prompt should change to reflect your current location:
     ```bash
-    (base) PS C:\Users\YourUsername>\Desktop\{{ repo_name }}-main
+    (base) PS C:\Users\YourUsername\Desktop\{{ repo_name }}-main>
     ```
 
 7) Create a new Mamba/Conda environment: 
@@ -47,7 +48,7 @@
 
     The prompt should now start with `({{ env_name }})`
     ```bash
-    ({{ env_name }}) PS C:\Users\YourUsername>\Desktop\{{ repo_name }}-main
+    ({{ env_name }}) PS C:\Users\YourUsername\Desktop\{{ repo_name }}-main>
     ```
 
 #### Setup Spyder IDE: 
