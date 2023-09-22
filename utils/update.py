@@ -37,6 +37,12 @@ for dependency in pip_dependencies:
     pip_dependencies_str += f"- {dependency}\n"
 print(pip_dependencies_str)
 
+# Extract installation instructions
+with open(Path(root_path / "utils" / "README_installation.md"), "r") as file:
+    installation = file.read()
+
+print(installation)
+
 #%% Update README -------------------------------------------------------------
 
 # Read README_template.md
@@ -47,6 +53,7 @@ with open(Path(root_path / "utils" / "README_template.md"), "r") as file:
 txt = txt.replace("{{ repo_name }}", repo_name)
 txt = txt.replace("{{ env_name }}", env_name)
 txt = txt.replace("{{ python_version }}", python_version)
+txt = txt.replace("{{ installation }}", installation)
 txt = txt.replace("{{ conda_dependencies }}", conda_dependencies_str)
 txt = txt.replace("{{ pip_dependencies }}", pip_dependencies_str)
 

@@ -24,7 +24,7 @@
     ```bash
     (base) PS C:\Users\YourUsername>
     ```
-    ⚠️ `(base)` at the beginning of the prompt means that you are in your base environment
+    `(base)` at the beginning of the prompt means that you are in your base environment
 
 6) Move to the downloaded GitHub repository using the `cd` command: 
     ```bash
@@ -53,4 +53,4 @@
 #### Setup Spyder IDE: 
 
 <hr style=\"border-top: 1px\">
-</details>
+</details>  
