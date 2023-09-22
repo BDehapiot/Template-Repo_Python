@@ -13,35 +13,39 @@
     - add Miniforge3 to PATH environment variable
 
 ### 3 - Setup mamba/conda environment: 
-- Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder) 
 
-Your prompt should look like this:  
+- Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder) 
+- The prompt should look like this:  
 ```bash
 (base) PS C:\Users\YourUsername>
 ```
-⚠️`(base)` indicating that you are in your base environment
 
-- Move the prompt to the downloaded GitHub repository using the `cd` command: 
+- Move to the downloaded GitHub repository using the `cd` command: 
 ```bash
 cd Desktop/{{ repo_name }}-main
 ```
+
 - The prompt should change to reflect your current location:
 ```bash
 (base) PS C:\Users\YourUsername>\Desktop\{{ repo_name }}-main
 ```
+
 - You can now create a new mamba/conda environment: 
 ```bash
 mamba env create -f environment.yml
 ```
-- And activate it:
-```bash
-mamba activate {{ env_name }}
-```
-- Your prompt should now start with `({{ env_name }})`
 
+- Activate the newly created environment:
 ```bash
 mamba activate {{ env_name }}
 ```
+
+- The prompt should now start with `({{ env_name }})`
+```bash
+mamba activate {{ env_name }}
+```
+
+### 4 - Start Spyder IDE and create a project: 
 
 <hr style=\"border-top: 1px\">
 </details>
