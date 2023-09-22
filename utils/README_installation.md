@@ -19,38 +19,37 @@
 ### Setup Mamba/Conda environment: 
 
 5) Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder)  
-<span style="font-size: 10px;">The prompt should look like this:</span>  
+The prompt should look like this:  
     ```bash
     (base) PS C:\Users\YourUsername>
     ```
     ⚠️ `(base)` at the beginning of the prompt means that you are in your base environment
 
 6) Move to the downloaded GitHub repository using the `cd` command: 
-```bash
-cd Desktop/{{ repo_name }}-main
-```
+    ```bash
+    cd Desktop/{{ repo_name }}-main
+    ```
+    The prompt should change to reflect your current location:
+    ```bash
+    (base) PS C:\Users\YourUsername>\Desktop\{{ repo_name }}-main
+    ```
 
-- The prompt should change to reflect your current location:
-```bash
-(base) PS C:\Users\YourUsername>\Desktop\{{ repo_name }}-main
-```
+8) Create a new Mamba/Conda environment: 
+    ```bash
+    mamba env create -f environment.yml
+    ```
 
-- You can now create a new Mamba/Conda environment: 
-```bash
-mamba env create -f environment.yml
-```
+9) Activate the newly created environment:
+    ```bash
+    mamba activate {{ env_name }}
+    ```
 
-- Activate the newly created environment:
-```bash
-mamba activate {{ env_name }}
-```
+    The prompt should now start with `({{ env_name }})`
+    ```bash
+    ({{ env_name }}) PS C:\Users\YourUsername>\Desktop\{{ repo_name }}-main
+    ```
 
-- The prompt should now start with `({{ env_name }})`
-```bash
-mamba activate {{ env_name }}
-```
-
-### 4 - Start Spyder IDE and create a project: 
+### Start & setup Spyder IDE: 
 
 <hr style=\"border-top: 1px\">
 </details>
