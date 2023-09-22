@@ -7,13 +7,11 @@
 ## Description
 
 ## Installation
+This tutorial provides a step-by-step guide to installing **Python**, coupled with **Spyder**, utilizing the **Mamba/Conda** environment manager. Spyder is an Integrated Development Environment (IDE), allowing users to easely execute and interact with Python codes. Although not mandatory, Spyder is recommended for beginners.
+
 <details> <summary>Windows</summary>  
-<br>This is a step by step guide to install Python and Spyder using the Mamba/Conda
-environment manager.  
 
-Spyder is an Integrated Development Interface (IDE) to interact with Python codes.
-
-While all steps are required to complete installation, only steps 5, 8 and 9 will be later necessary to start Spyder in the good environment. 
+<br>While all the following steps are required for installation, only steps 5, 8 and 9 will be required subsequently. 
 
 ### Download GitHub repository:  
 
