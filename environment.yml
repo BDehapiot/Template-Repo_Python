@@ -1,4 +1,4 @@
-name: Python_Lite
+name: Python-Lite
 
 channels:
   - conda-forge
