@@ -158,4 +158,4 @@ Please select your operating system:
     - Click the `Create` button  
 
     You can re-open your project later using `Projects` > `Recent Projects...`
-</details>
+</details>  
