@@ -1,5 +1,6 @@
 <details> <summary>Windows</summary>  
-<br>This is a step by step guide to 
+<br>This is a step by step guide on how to install Python within the Mamba/Conda
+environment manager. 
 
 ### Download GitHub repository:  
 
@@ -22,7 +23,7 @@
 5) Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder)  
 <br>The prompt should look like this:  
     ```bash
-    (base) PS C:\Users\YourUsername>
+    (base) C:\Users\YourUsername>
     ```
     `(base)` at the beginning of the prompt means that you are in your base environment
 
@@ -32,10 +33,10 @@
     ```
     The prompt should change to reflect your current location:
     ```bash
-    (base) PS C:\Users\YourUsername\Desktop\{{ repo_name }}-main>
+    (base) C:\Users\YourUsername\Desktop\{{ repo_name }}-main>
     ```
 
-7) Create a new Mamba/Conda environment: 
+7) Create a new Mamba/Conda environment (it takes a few minutes): 
     ```bash
     mamba env create -f environment.yml
     ```
@@ -47,10 +48,20 @@
 
     The prompt should now start with `({{ env_name }})`
     ```bash
-    ({{ env_name }}) PS C:\Users\YourUsername\Desktop\{{ repo_name }}-main>
+    ({{ env_name }}) C:\Users\YourUsername\Desktop\{{ repo_name }}-main>
     ```
 
-### Setup Spyder IDE: 
+### Start and setup Spyder IDE: 
 
-<hr style=\"border-top: 1px\">
+9) Start Spyder IDE using the following command:
+    ```bash
+    spyder
+    ```
+
+10) Create a new Spyder project associated to the downloaded GitHub repository
+    - Click the `Projects` tab and select `New Project...`
+    - Select `Existing directory` and click the folder icon 
+    - Point toward the downloaded GitHub repository
+    - Click the Create button
+
 </details>  
