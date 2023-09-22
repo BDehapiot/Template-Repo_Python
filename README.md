@@ -1,4 +1,4 @@
-![Author Badge](https://img.shields.io/badge/Author-Benoit_Dehapiot-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))  
+![Author Badge](https://img.shields.io/badge/Author-Benoit_Dehapiot-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))
 ![License Badge](https://img.shields.io/badge/Licence-GNU_General_Public_License_v3.0-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))  
 ![Python Badge](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=rgb(149%2C157%2C165)&labelColor=rgb(50%2C60%2C65))
 
@@ -69,13 +69,12 @@ While all steps are required to complete installation, only steps 5, 6, 8, 9 wil
     ```
 
 10) Create a new Spyder project
-    - Click the `Projects` tab and select `New Project...`
+    - Click the `Projects` > `New Project...`
     - Choose `Existing directory`
     - Select the GitHub repository using the folder icon
     - Click the `Create` button  
 
-    Note: If you change Spyder 
-
+    Note: Re-open your project using `Projects` > `Recent Projects...`
 </details>  
 
 ## Dependencies

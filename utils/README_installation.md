@@ -61,11 +61,10 @@ While all steps are required to complete installation, only steps 5, 6, 8, 9 wil
     ```
 
 10) Create a new Spyder project
-    - Click the `Projects` tab and select `New Project...`
+    - Click the `Projects` > `New Project...`
     - Choose `Existing directory`
     - Select the GitHub repository using the folder icon
     - Click the `Create` button  
 
-    Note: If you change Spyder 
-
+    Note: Re-open your project using `Projects` > `Recent Projects...`
 </details>  
