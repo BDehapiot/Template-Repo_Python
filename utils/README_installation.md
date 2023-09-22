@@ -1,6 +1,8 @@
 <details> <summary>Windows</summary>  
-<br>This is a step by step guide on how to install Python within the Mamba/Conda
-environment manager. 
+<br>This is a step by step guide to install Python using the Mamba/Conda
+environment manager.  
+
+While all steps are required to complete installation, only steps 5, 6, 8, 9 will be later necessary to 
 
 ### Download GitHub repository:  
 
@@ -36,7 +38,7 @@ environment manager.
     (base) C:\Users\YourUsername\Desktop\{{ repo_name }}-main>
     ```
 
-7) Create a new Mamba/Conda environment (it takes a few minutes): 
+7) Create a new Mamba/Conda environment (takes a few minutes): 
     ```bash
     mamba env create -f environment.yml
     ```
@@ -53,15 +55,17 @@ environment manager.
 
 ### Start and setup Spyder IDE: 
 
-9) Start Spyder IDE using the following command:
+9) Start Spyder using the following command:
     ```bash
     spyder
     ```
 
-10) Create a new Spyder project associated to the downloaded GitHub repository
+10) Create a new Spyder project
     - Click the `Projects` tab and select `New Project...`
-    - Select `Existing directory` and click the folder icon 
-    - Point toward the downloaded GitHub repository
-    - Click the Create button
+    - Choose `Existing directory`
+    - Select the GitHub repository using the folder icon
+    - Click the `Create` button  
+
+    Note: If you change Spyder 
 
 </details>  
