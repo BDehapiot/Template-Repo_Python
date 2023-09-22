@@ -20,8 +20,7 @@
  ```bash
 (base) PS C:\Users\YourUsername>
 ```
-<div style="font-size: 12px;"> ⚠️ `(base)` at the beginning of the prompt means that you are in your base mamba/conda environment</div>
-- ⚠️ `(base)` at the beginning of the prompt means that you are in your base mamba/conda environment
+⚠️ `(base)` at the beginning of the prompt means that you are in your base mamba/conda environment
 
 - Navigate to the downloaded GitHub repository using the `cd` command: 
  ```bash
