@@ -13,15 +13,13 @@
     - add Miniforge3 to PATH environment variable
 
 ### 3 - Setup mamba/conda environment: 
-- Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder)
-- Your prompt should look like this:  
+- Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder) 
+
+Your prompt should look like this:  
 ```bash
 (base) PS C:\Users\YourUsername>
 ```
-    - ⚠️`(base)` indicates that you are in your base environment
-
-
-
+⚠️`(base)` indicating that you are in your base environment
 
 - Move the prompt to the downloaded GitHub repository using the `cd` command: 
 ```bash
@@ -35,13 +33,15 @@ cd Desktop/{{ repo_name }}-main
 ```bash
 mamba env create -f environment.yml
 ```
-- Activate your newly created environment:
+- And activate it:
 ```bash
 mamba activate {{ env_name }}
 ```
 - Your prompt should now start with `({{ env_name }})`
 
+```bash
+mamba activate {{ env_name }}
+```
+
 <hr style=\"border-top: 1px\">
 </details>
-
-⚠️ `(base)` at the beginning of the prompt means that you are in your base mamba/conda environment
