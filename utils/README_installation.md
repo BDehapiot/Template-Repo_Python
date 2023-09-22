@@ -1,6 +1,5 @@
-<details> <summary>Windows</summary>
-
-This is a step by step guide to 
+<details> <summary>Windows</summary>  <br>
+<br>This is a step by step guide to 
 
 #### Download GitHub repository:  
 
