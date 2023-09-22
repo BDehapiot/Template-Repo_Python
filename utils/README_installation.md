@@ -20,8 +20,7 @@
 #### Setup Mamba/Conda environment: 
 
 5) Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder)  
-<br>The prompt should look like this:  
-`(base) PS C:\Users\YourUsername>`  
+<br>The prompt should look like this: `(base) PS C:\Users\YourUsername>`  
 With `(base)` at the beginning meaning that you are in your base environment
     <!-- ```bash
     (base) PS C:\Users\YourUsername>
