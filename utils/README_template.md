@@ -3,11 +3,10 @@
 ![Python Badge](https://img.shields.io/badge/Python-{{ python_version }}-blue?logo=python&logoColor=rgb(149%2C157%2C165)&labelColor=rgb(50%2C60%2C65))
 
 # {{ repo_name }}
-
 ## Description
-
+{{ description }}
 ## Installation
-
+{{ installation }}
 ## Dependencies
 ### Conda
 {{ conda_dependencies }}
