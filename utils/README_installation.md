@@ -9,8 +9,8 @@
 - Download Mambaforge installer for Windows 
 ([link](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe))
 - Run the downloaded `.exe` file and select the following options:  
-    🗸 create start menu shortcuts  
-    🗸 add Miniforge3 to PATH environment variable
+    <div style="font-size: 12px;">🗸 create start menu shortcuts</div>
+    <div style="font-size: 12px;">🗸 add Miniforge3 to PATH environment variable</div>
 
 ### 3 - Setup mamba/conda environment: 
 - Start `Miniforge Prompt` from the newly installed Miniforge3 folder (see `start Menu`)
