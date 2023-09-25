@@ -7,9 +7,11 @@
 ## Description
 
 ## Installation
-This tutorial provides a step-by-step guide to install **Python**, coupled with **Spyder**, using the **Conda/Mamba** environment manager.  
+This tutorial provides a step-by-step guide to install Python, coupled with Spyder, using the Conda/Mamba environment manager.  
 
-Spyder is an Integrated Development Environment (IDE), allowing users to easely execute and interact with Python codes. Although not mandatory, Spyder is highly recommended for beginners.  
+The **Conda/Mamba** environment manager allows to run Python code within a controlled environment that contains all necessary dependencies. It's a best practice to create a distinct environment for each Python-based projects. 
+
+**Spyder** is an Integrated Development Environment (IDE), enabling users to easely execute and interact with Python codes. Although not mandatory, Spyder is highly recommended for beginners.  
 
 Select your operating system:
 
@@ -71,7 +73,8 @@ Select your operating system:
     - Select the GitHub repository using the folder icon
     - Click the `Create` button  
 
-    You can re-open your project later using `Projects` > `Recent Projects...`
+    Projects can be re-opened later with: `Projects` > `Recent Projects...`
+
 </details>  
 
 ## Dependencies
