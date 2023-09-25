@@ -35,9 +35,9 @@ repo_data = requests.get(
     f"https://api.github.com/repos/BDehapiot/{repo_name}", 
     headers={}
     ).json()
-date = repo_data["created_at"][:10]
-short_description = repo_data["description"]
+date = urllib.parse.quote(repo_data["created_at"][:10])
 license = urllib.parse.quote(repo_data["license"]["name"])
+short_description = repo_data["description"]
 
 # Extract environment name
 env_name = environment.get('name', '')
