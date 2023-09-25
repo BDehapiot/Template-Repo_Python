@@ -1,180 +1,136 @@
 ![Python Badge](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=rgb(149%2C157%2C165)&labelColor=rgb(50%2C60%2C65))  
 ![Author Badge](https://img.shields.io/badge/Author-Benoit_Dehapiot-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))
 ![Date Badge](https://img.shields.io/badge/Created-2023--09--20-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))
-![License Badge](https://img.shields.io/badge/Licence-GNU%20General%20Public%20License%20v3.0-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))  
+![License Badge](https://img.shields.io/badge/Licence-GNU%20General%20Public%20License%20v3.0-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))    
 
 # Template-Repo_Python-Lite
 Template repository for simple Python-based projects
 ## Description
 
 ## Installation
-This tutorial provides a step-by-step guide to install **Python** using a **Conda** package manager.  
-
-**Conda** is a package manager that allows to run Python code within a controlled environment that contains all necessary dependencies. It's a best practice to create a distinct environment for each Python-based projects. 
+In this tutorial, we will see how to install **Python** using a **Conda** package manager to execute our scripts in a controlled environment with all essential dependencies.  
 
 ### 1. Download GitHub repository:  
 
-- [Template-Repo_Python-Lite-main.zip](https://github.com/BDehapiot/Template-Repo_Python-Lite/archive/refs/heads/main.zip)
-- Unzip folder to a known location (e.g. `Desktop`)
+- Download this repository by clicking the following 
+[link](https://github.com/BDehapiot/Template-Repo_Python-Lite/archive/refs/heads/main.zip)  
+- Unzip the downloaded folder to a known location (e.g. `Desktop`)
 
-### 2. Install Miniforge:
+### 2. Install Conda and create a new environment:
 
+We will now install Conda using the light-weight **Miniforge** installer and create a new environment using the `environment.yml` file shipped with this repository.
 
-
-**Spyder** is an Integrated Development Environment (IDE), enabling users to easely execute and interact with Python codes. Although not mandatory, Spyder is highly recommended for beginners.  
-
-Select your operating system:
+Select your operating system:  
 
 <details> <summary>Windows</summary>  
 
-### Download GitHub repository:  
-
-1) Download this GitHub repository
-([link](https://github.com/BDehapiot/Template-Repo_Python-Lite/archive/refs/heads/main.zip)) 
-
-2) Unzip folder to a known location (e.g. `C:\Users\YourUsername\Desktop`)
-
-### Install Miniforge:  
-
-3) Download Miniforge installer for Windows
+- Download Miniforge installer for Windows
 ([link](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe))  
 
-4) Run the downloaded `.exe` file and select the following options:    
+- Run the downloaded `.exe` file and select the following options:    
     - *create start menu shortcuts*  
-    - *add Miniforge3 to PATH environment variable*  
+    - *add Miniforge3 to PATH environment variable* 
 
-### Setup Conda environment: 
+- Run Miniforge Prompt from your start menu shortcuts  
 
-5) Run Miniforge Prompt from start menu shortcuts  
-
-    The prompt should read:  
+    Your prompt should read something like:  
     `(base) C:\Users\YourUsername>`  
-    `(base)` meaning that we are in our base environment  
+    `(base)` meaning that you are in your base Conda environment 
 
-6) Move to the downloaded GitHub repository using the `cd` command: 
+- Move to your downloaded GitHub repository using the `cd` command: 
     ```bash
     cd Desktop/Template-Repo_Python-Lite-main
     ```
-    The prompt should change to reflect our current location:  
+    Your prompt should change to reflect your current location:  
     `(base) C:\Users\YourUsername\Desktop\Template-Repo_Python-Lite-main>`
 
-7) Create a new Conda environment (takes a few minutes): 
+- Create a new Conda environment (takes a few minutes): 
     ```bash
     mamba env create -f environment.yml
     ```
 
-8) Activate the newly created environment:
+- Activate the new environment:
     ```bash
     conda activate Python-Lite
     ```
-    The prompt should now start with `(Python-Lite)`  
+    Your prompt should now display `(Python-Lite)` indicating that you have changed environment   
     `(Python-Lite) C:\Users\YourUsername\Desktop\Template-Repo_Python-Lite-main>`
 
-### Start and setup Spyder IDE: 
-
-9) Start Spyder using the following command:
-    ```bash
-    spyder
-    ```
-
-10) Create a new Spyder project
-    - Click the `Projects` > `New Project...`
-    - Choose `Existing directory`
-    - Select the GitHub repository using the folder icon
-    - Click the `Create` button  
-
-    Projects can be re-opened later with: `Projects` > `Recent Projects...`
-
-</details>  
+</details> 
 
 <details> <summary>MacOS</summary>  
 
-### Download GitHub repository: 
-
-1) Download GitHub repository
-([link](https://github.com/BDehapiot/Template-Repo_Python-Lite/archive/refs/heads/main.zip)) 
-
-2) Unzip folder to a known location (e.g. `~/Desktop`)
-
-### Install Miniforge:  
-
-3) Download Miniforge installer for MacOS 
+- Download Miniforge installer for MacOS 
 ([legacy](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-x86_64.sh))
 ([M-Series](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh)) 
 
-4) Open terminal by typing `terminal` in Launchpad or Spotlight search  
-    
-    The prompt should read:  
+- Open your terminal by typing `terminal` in the Launchpad  
+
+    Your prompt should read something like:  
     `YourUsername@MacBook-Pro ~ %`
 
-5) Move to the downloaded Miniforge script using the `cd` command:  
-    It is most likely located in the `Downloads` folder    
+- Move to where you downloaded the Miniforge installer using the `cd` command:  
+It is most likely located in your `Downloads` folder    
     ```bash
     cd ~/Downloads
     ```  
     
-6) Run the following command to install Miniforge:  
+- Run the following command to install Miniforge:  
 
-    *Legacy*
     ```bash
+    # legacy
     bash Miniforge3-MacOSX-x86_64.sh
-    ```  
-    
-    *M-Series*
-    ```bash
+    # M-Series
     bash Miniforge3-MacOSX-arm64.sh
-    ```
+    ```  
     Follow the Terminal prompts to complete installation and accept default options  
 
-### Setup Conda environment: 
+- Close and re-open your terminal  
 
-7) Close and re-open your terminal  
-
-    The prompt should now read:  
+    Your prompt should now read something like:  
     `(base) YourUsername@MacBook-Pro ~ %`  
-    `(base)` meaning that we are in our base environment  
+    `(base)` meaning that you are in your base Conda environment  
 
-8) Move to the downloaded GitHub repository: 
+- Move to your downloaded GitHub repository: 
     ```bash
     cd Desktop/Template-Repo_Python-Lite-main
     ```
-    The prompt should change to reflect our current location:  
+    Your prompt should change to reflect your current location:  
     `(base) YourUsername@MacBook-Pro Desktop/Template-Repo_Python-Lite-main %`  
 
-9) Create a new Conda environment (takes a few minutes):  
+- Create a new Conda environment (takes a few minutes):  
     ```bash
     mamba env create -f environment.yml
     ```
 
-10) Activate the newly created environment:
+- Activate the new environment:
     ```bash
     conda activate Python-Lite
     ```
 
-    The prompt should now start with `(Python-Lite)`  
-    `(Python-Lite) YourUsername@MacBook-Pro Desktop/Template-Repo_Python-Lite-main %`  
+    Your prompt should now display `(Python-Lite)` indicating that you have changed environment  
+    `(Python-Lite) YourUsername@MacBook-Pro Desktop/Template-Repo_Python-Lite-main %`
 
-### Start and setup Spyder IDE: 
+</details> 
 
-11) Start Spyder using the following command:
+### 3. Execute Python scripts with Spyder IDE: 
+
+**Spyder** is an Integrated Development Environment (IDE), enabling users to easely execute and interact with Python scripts. Although not mandatory, Spyder is highly recommended for beginners.  
+
+- Activate your new environment and start Spyder using the following command:  
     ```bash
     spyder
     ```
 
-12) Create a new Spyder project
-    - Click the `Projects` > `New Project...`
+- Create a new project from the Spyder interface:
+    - Click `Projects` > `New Project...`
     - Choose `Existing directory`
-    - Select the GitHub repository using the folder icon
+    - Select the downloaded GitHub repository using the folder icon
     - Click the `Create` button  
 
-    Projects can be re-opened later with: `Projects` > `Recent Projects...`
+    Note: projects can be re-opened later with: `Projects` > `Recent Projects...`
 
-
-</details>  
-
-<details> <summary>Linux</summary>  
-
-</details>  
+    You can now browse the repository in Spyder and open `.py` files to run Python scripts   
 
 ## Dependencies
 ### Conda
