@@ -35,7 +35,6 @@ for dependency in conda_dependencies:
 pip_dependencies_str = ""
 for dependency in pip_dependencies:
     pip_dependencies_str += f"- {dependency}\n"
-print(pip_dependencies_str)
 
 # Extract installation instructions
 with open(Path(root_path / "utils" / "README_description.md"), "r") as file:

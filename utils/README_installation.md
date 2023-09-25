@@ -1,6 +1,6 @@
 This tutorial provides a step-by-step guide to install Python, coupled with Spyder, using the Conda environment manager.  
 
-The **Conda** environment manager allows to run Python code within a controlled environment that contains all necessary dependencies. It's a best practice to create a distinct environment for each Python-based projects. 
+**Conda** environment manager allows to run Python code within a controlled environment that contains all necessary dependencies. It's a best practice to create a distinct environment for each Python-based projects. 
 
 **Spyder** is an Integrated Development Environment (IDE), enabling users to easely execute and interact with Python codes. Although not mandatory, Spyder is highly recommended for beginners.  
 
@@ -88,11 +88,11 @@ Select your operating system:
     The prompt should read:  
     `YourUsername@MacBook-Pro ~ %`
 
-5) Move to the downloaded Miniforge script using the `cd` command:   
+5) Move to the downloaded Miniforge script using the `cd` command:  
+    It is most likely located in the `Downloads` folder    
     ```bash
     cd ~/Downloads
-    ```
-    It is most likely located in the `Downloads` folder  
+    ```  
     
 6) Run the following command to install Miniforge:  
 
@@ -105,7 +105,7 @@ Select your operating system:
     ```bash
     bash Miniforge3-MacOSX-arm64.sh
     ```
-    Follow the Terminal prompts to complete installation while accepting default options  
+    Follow the Terminal prompts to complete installation and accept default options  
 
 ### Setup Conda environment: 
 
@@ -129,7 +129,7 @@ Select your operating system:
 
 10) Activate the newly created environment:
     ```bash
-    mamba activate {{ env_name }}
+    conda activate {{ env_name }}
     ```
 
     The prompt should now start with `({{ env_name }})`  
