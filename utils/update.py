@@ -1,6 +1,7 @@
 #%% Imports -------------------------------------------------------------------
 
 import yaml
+import requests
 from pathlib import Path
 
 #%% Initialize ----------------------------------------------------------------
@@ -27,6 +28,14 @@ with open(Path(root_path / "utils" / "README_template.md"), "r") as file:
     template = file.read()
 
 #%% Extract relevant informations ---------------------------------------------
+
+# Extract repository data
+repo_data = requests.get(
+    f"https://api.github.com/repos/BDehapiot/{repo_name}", 
+    headers={}
+    ).json()
+short_description = repo_data["description"]
+license = repo_data["license"]["name"]
 
 # Extract environment name
 env_name = environment.get('name', '')
@@ -56,8 +65,9 @@ for dependency in pip_dependencies:
 installation = installation.replace("{{ repo_name }}", repo_name)
 installation = installation.replace("{{ env_name }}", env_name)
 template = template.replace("{{ repo_name }}", repo_name)
-template = template.replace("{{ env_name }}", env_name)
 template = template.replace("{{ python_version }}", python_version)
+template = template.replace("{{ license }}", license)
+template = template.replace("{{ short_description }}", short_description)
 template = template.replace("{{ description }}", description)
 template = template.replace("{{ installation }}", installation)
 template = template.replace("{{ conda_dependencies }}", conda_dependencies_str)
