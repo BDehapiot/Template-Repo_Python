@@ -146,12 +146,12 @@ Select your operating system:
 
 ### Start and setup Spyder IDE: 
 
-9) Start Spyder using the following command:
+11) Start Spyder using the following command:
     ```bash
     spyder
     ```
 
-10) Create a new Spyder project
+12) Create a new Spyder project
     - Click the `Projects` > `New Project...`
     - Choose `Existing directory`
     - Select the GitHub repository using the folder icon
