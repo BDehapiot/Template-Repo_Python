@@ -27,9 +27,7 @@ Select your operating system:
 5) Run **Miniforge Prompt** from start menu shortcuts  
 
     The prompt should read:  
-
     `(base) C:\Users\YourUsername>`  
-     
     `(base)` meaning that we are in our base environment  
 
 6) Move to the downloaded GitHub repository using the `cd` command: 
