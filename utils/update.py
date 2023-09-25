@@ -36,7 +36,7 @@ repo_data = requests.get(
     headers={}
     ).json()
 date = repo_data["created_at"][:10]
-date.replace("-", "--")
+date = date.replace("-", "--")
 date = urllib.parse.quote(date)
 license = urllib.parse.quote(repo_data["license"]["name"])
 short_description = repo_data["description"]

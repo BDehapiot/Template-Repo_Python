@@ -1,14 +1,6 @@
-This tutorial provides a step-by-step guide to install **Python** using a **Conda** package manager.  
+This tutorial provides a step-by-step guide to install Python, coupled with Spyder, using the Conda environment manager.  
 
-### 1. Download GitHub repository:  
-
-- [{{ repo_name }}-main.zip](https://github.com/BDehapiot/{{ repo_name }}/archive/refs/heads/main.zip)
-
-- Unzip folder to a known location (e.g. `Desktop`)
-
-### 2. Install Miniforge:
-
-**Conda** is a package manager that allows to run Python code within a controlled environment that contains all necessary dependencies. It's a best practice to create a distinct environment for each Python-based projects. 
+**Conda** environment manager allows to run Python code within a controlled environment that contains all necessary dependencies. It's a best practice to create a distinct environment for each Python-based projects. 
 
 **Spyder** is an Integrated Development Environment (IDE), enabling users to easely execute and interact with Python codes. Although not mandatory, Spyder is highly recommended for beginners.  
 

@@ -1,16 +1,25 @@
 ![Python Badge](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=rgb(149%2C157%2C165)&labelColor=rgb(50%2C60%2C65))  
-![Author Badge](https://img.shields.io/badge/Author-Benoit_Dehapiot-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))  
+![Author Badge](https://img.shields.io/badge/Author-Benoit_Dehapiot-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))
+![Date Badge](https://img.shields.io/badge/Created-2023--09--20-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))
 ![License Badge](https://img.shields.io/badge/Licence-GNU%20General%20Public%20License%20v3.0-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))  
-![Date Badge](https://img.shields.io/badge/Created-2023-09-20-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))  
 
 # Template-Repo_Python-Lite
 Template repository for simple Python-based projects
 ## Description
 
 ## Installation
-This tutorial provides a step-by-step guide to install Python, coupled with Spyder, using the Conda environment manager.  
+This tutorial provides a step-by-step guide to install **Python** using a **Conda** package manager.  
 
-**Conda** environment manager allows to run Python code within a controlled environment that contains all necessary dependencies. It's a best practice to create a distinct environment for each Python-based projects. 
+**Conda** is a package manager that allows to run Python code within a controlled environment that contains all necessary dependencies. It's a best practice to create a distinct environment for each Python-based projects. 
+
+### 1. Download GitHub repository:  
+
+- [Template-Repo_Python-Lite-main.zip](https://github.com/BDehapiot/Template-Repo_Python-Lite/archive/refs/heads/main.zip)
+- Unzip folder to a known location (e.g. `Desktop`)
+
+### 2. Install Miniforge:
+
+
 
 **Spyder** is an Integrated Development Environment (IDE), enabling users to easely execute and interact with Python codes. Although not mandatory, Spyder is highly recommended for beginners.  
 
