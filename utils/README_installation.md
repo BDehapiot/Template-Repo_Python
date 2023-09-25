@@ -26,7 +26,7 @@ Select your operating system:
 
 ### Setup Conda environment: 
 
-5) Run **Miniforge Prompt** from start menu shortcuts  
+5) Run Miniforge Prompt from start menu shortcuts  
 
     The prompt should read:  
     `(base) C:\Users\YourUsername>`  
