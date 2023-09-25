@@ -20,7 +20,7 @@ Select your operating system:
 ### Download GitHub repository:  
 
 1) Download this GitHub repository
-([link](https://github.com/BDehapiot/ETH-ScopeM_CZITools/archive/refs/heads/main.zip)) 
+([link](https://github.com/BDehapiot/Template-Repo_Python-Lite/archive/refs/heads/main.zip)) 
 
 2) Unzip folder to a known location (e.g. `C:\Users\YourUsername\Desktop`)
 
@@ -45,7 +45,7 @@ Select your operating system:
     ```bash
     cd Desktop/Template-Repo_Python-Lite-main
     ```
-    The prompt should change to reflect your current location:  
+    The prompt should change to reflect our current location:  
     `(base) C:\Users\YourUsername\Desktop\Template-Repo_Python-Lite-main>`
 
 7) Create a new Mamba/Conda environment (takes a few minutes): 
@@ -77,6 +77,31 @@ Select your operating system:
 
 </details>  
 
+<details> <summary>MacOS</summary>  
+
+### Download GitHub repository: 
+
+1) Download GitHub repository
+([link](https://github.com/BDehapiot/Template-Repo_Python-Lite/archive/refs/heads/main.zip)) 
+
+2) Unzip folder to a known location (e.g. `~/Desktop`)
+
+### Install Mambaforge:  
+
+3) Download Mambaforge installer for MacOS 
+([legacy](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-x86_64.sh))
+([M-Series](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh)) 
+
+4) Open the terminal typing "terminal" in Launchpad or Spotlight search  
+    
+    The prompt should read:  
+    `YourUsername@MacBook-Pro ~ %`
+
+</details>  
+
+<details> <summary>Linux</summary>  
+
+</details>  
 ## Dependencies
 ### Conda
 - python=3.10
