@@ -1,7 +1,7 @@
 ![Python Badge](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=rgb(149%2C157%2C165)&labelColor=rgb(50%2C60%2C65))  
 ![Author Badge](https://img.shields.io/badge/Author-Benoit_Dehapiot-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))  
 ![License Badge](https://img.shields.io/badge/Licence-GNU%20General%20Public%20License%20v3.0-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))  
-
+![Date Badge](https://img.shields.io/badge/Created-2023-09-20-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))  
 
 # Template-Repo_Python-Lite
 Template repository for simple Python-based projects
