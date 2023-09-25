@@ -34,11 +34,11 @@ Select your operating system:
 ### Setup Conda/Mamba environment: 
 
 5) Run **Miniforge Prompt** from start menu shortcuts  
-<br>
+<br>  
     The prompt should read:  
     `(base) C:\Users\YourUsername>`  
     `(base)` meaning that we are in our base environment  
-<br>
+<br>  
 
 6) Move to the downloaded GitHub repository using the `cd` command: 
     ```bash
