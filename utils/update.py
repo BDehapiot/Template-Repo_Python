@@ -35,7 +35,9 @@ repo_data = requests.get(
     f"https://api.github.com/repos/BDehapiot/{repo_name}", 
     headers={}
     ).json()
-date = urllib.parse.quote(repo_data["created_at"][:10])
+date = repo_data["created_at"][:10]
+date.replace("-", "--")
+date = urllib.parse.quote(date)
 license = urllib.parse.quote(repo_data["license"]["name"])
 short_description = repo_data["description"]
 
