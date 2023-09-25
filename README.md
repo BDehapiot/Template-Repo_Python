@@ -7,19 +7,17 @@
 ## Description
 
 ## Installation
-This tutorial provides a step-by-step guide to install **Python**, coupled with **Spyder**, using the **Mamba/Conda** environment manager.  
+This tutorial provides a step-by-step guide to install **Python**, coupled with **Spyder**, using the **Conda/Mamba** environment manager.  
 
 Spyder is an Integrated Development Environment (IDE), allowing users to easely execute and interact with Python codes. Although not mandatory, Spyder is highly recommended for beginners.  
 
-Please select your operating system:
+Select your operating system:
 
 <details> <summary>Windows</summary>  
 
-<br>While all the following steps are required for installation, only steps 5, 8 and 9 will be required subsequently. 
-
 ### Download GitHub repository:  
 
-1) Download GitHub repository
+1) Download this GitHub repository
 ([link](https://github.com/BDehapiot/ETH-ScopeM_CZITools/archive/refs/heads/main.zip)) 
 
 2) Unzip folder to a known location (e.g. `C:\Users\YourUsername\Desktop`)
@@ -30,15 +28,17 @@ Please select your operating system:
 ([link](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe))  
 
 4) Run the downloaded `.exe` file and select the following options:    
-    - create start menu shortcuts  
-    - add Miniforge3 to PATH environment variable  
+    - *create start menu shortcuts*  
+    - *add Miniforge3 to PATH environment variable*  
 
-### Setup Mamba/Conda environment: 
+### Setup Conda/Mamba environment: 
 
-5) Run `Miniforge Prompt` from start menu shortcuts (see `Miniforge3` folder)  
-<br>The prompt should look like this:  
+5) Run **Miniforge Prompt** from start menu shortcuts  
+<br>
+    The prompt should read:  
     `(base) C:\Users\YourUsername>`  
-    `(base)` at the beginning of the prompt means that you are in your base environment
+    `(base)` meaning that we are in our base environment  
+<br>
 
 6) Move to the downloaded GitHub repository using the `cd` command: 
     ```bash

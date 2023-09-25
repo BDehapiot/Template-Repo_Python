@@ -18,9 +18,9 @@ Select your operating system:
 3) Download Mambaforge installer for Windows
 ([link](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe))  
 
-4) Run the downloaded **.exe** file and select the following options:    
-    - "create start menu shortcuts" 
-    - "add Miniforge3 to PATH environment variable"  
+4) Run the downloaded `.exe` file and select the following options:    
+    - *create start menu shortcuts*  
+    - *add Miniforge3 to PATH environment variable*  
 
 ### Setup Conda/Mamba environment: 
 
@@ -28,7 +28,7 @@ Select your operating system:
 <br>
     The prompt should read:  
     `(base) C:\Users\YourUsername>`  
-    **(base)** meaning that we are in our base environment  
+    `(base)` meaning that we are in our base environment  
 <br>
 
 6) Move to the downloaded GitHub repository using the `cd` command: 
