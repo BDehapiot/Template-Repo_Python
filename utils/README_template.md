@@ -4,7 +4,7 @@
 
 
 # {{ repo_name }}
-{{ description }}
+{{ short_description }}
 ## Description
 {{ description }}
 ## Installation

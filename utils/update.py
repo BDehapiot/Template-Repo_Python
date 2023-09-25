@@ -1,6 +1,7 @@
 #%% Imports -------------------------------------------------------------------
 
 import yaml
+import urllib
 import requests
 from pathlib import Path
 
@@ -35,7 +36,7 @@ repo_data = requests.get(
     headers={}
     ).json()
 short_description = repo_data["description"]
-license = repo_data["license"]["name"]
+license = urllib.parse.quote(repo_data["license"]["name"])
 
 # Extract environment name
 env_name = environment.get('name', '')
