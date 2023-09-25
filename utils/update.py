@@ -35,6 +35,7 @@ repo_data = requests.get(
     f"https://api.github.com/repos/BDehapiot/{repo_name}", 
     headers={}
     ).json()
+date = repo_data["created_at"][:10]
 short_description = repo_data["description"]
 license = urllib.parse.quote(repo_data["license"]["name"])
 
@@ -68,6 +69,7 @@ installation = installation.replace("{{ env_name }}", env_name)
 template = template.replace("{{ repo_name }}", repo_name)
 template = template.replace("{{ python_version }}", python_version)
 template = template.replace("{{ license }}", license)
+template = template.replace("{{ date }}", date)
 template = template.replace("{{ short_description }}", short_description)
 template = template.replace("{{ description }}", description)
 template = template.replace("{{ installation }}", installation)
