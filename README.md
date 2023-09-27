@@ -8,17 +8,17 @@ Template repository for simple Python-based projects
 ## Description
 
 ## Installation
-In this tutorial, we will see how to install **Python** using a **Conda** package manager to execute our scripts in a controlled environment with all essential dependencies.  
+In this tutorial, we will see how to install [Python](https://www.python.org/) using a [Conda](https://docs.conda.io/en/latest/) package manager to execute our scripts in a controlled environment with all essential dependencies.  
 
-### 1. Download GitHub repository:  
+### Download GitHub repository:  
 
 - Download this repository by clicking the following 
 [link](https://github.com/BDehapiot/Template-Repo_Python-Lite/archive/refs/heads/main.zip)  
 - Unzip the downloaded folder to a known location (e.g. `Desktop`)
 
-### 2. Install Conda and create a new environment:
+### Install Conda and create a new environment:
 
-We will now install Conda using the light-weight **Miniforge** installer and create a new environment using the `environment.yml` file shipped with this repository.
+We will now install Conda using the light-weight [Miniforge](https://github.com/conda-forge/miniforge) installer and create a new environment using the `environment.yml` file shipped with this repository.
 
 Select your operating system:  
 
@@ -113,16 +113,16 @@ It is most likely located in your `Downloads` folder
 
 </details> 
 
-### 3. Execute Python scripts: 
+### Execute Python scripts: 
 
-To execute Python scripts, identifiable by their `.py` extension, you can either enter commands in your terminal or use an Integrated Development Environment (IDE) to directly interact with the code (preferred option). Here, we'll guide you on how to install and set up the **Spyder** IDE, which is a favorable choice for beginners.
+To execute Python scripts, identifiable by their `.py` extension, you can either enter commands in your terminal or use an Integrated Development Environment (IDE) to directly interact with the code (preferred option). Here, we'll guide you on how to install and set up the [Spyder](https://docs.spyder-ide.org/current/index.html) IDE, which is a favorable choice for beginners.
 
 - Open your terminal and activate your new environment:  
     ```bash
     conda activate Python-Lite
     ```
 
-- Install Spyder using pip:
+- Install Spyder using pip (only the first time):
     ```bash
     pip install spyder
     ```
@@ -132,15 +132,15 @@ To execute Python scripts, identifiable by their `.py` extension, you can either
     spyder
     ```
 
-- Once in the interface, create a new project:
+- Use the interface to create a new project:
     - Click `Projects` > `New Project...`
     - Choose `Existing directory`
     - Select the downloaded GitHub repository using the folder icon
     - Click the `Create` button  
 
-    Note: projects can be re-opened later with: `Projects` > `Recent Projects...`
+    Projects can be re-opened later with: `Projects` > `Recent Projects...`
 
-    You can now browse the repository in Spyder and open `.py` files to run Python scripts   
+You can now browse the repository to open, modify and execute `.py` Python scripts within Spyder.
 
 ## Dependencies
 ### Conda
