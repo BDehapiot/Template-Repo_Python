@@ -18,8 +18,8 @@ Select your operating system:
 ([link](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe))  
 
 - Run the downloaded `.exe` file and select the following options:    
-    - *create start menu shortcuts*  
-    - *add Miniforge3 to PATH environment variable* 
+    - "create start menu shortcuts"  
+    - "add Miniforge3 to PATH environment variable" 
 
 - Run Miniforge Prompt from your start menu shortcuts  
 
@@ -51,7 +51,7 @@ Select your operating system:
 <details> <summary>MacOS</summary>  
 
 - Download Miniforge installer for MacOS 
-([legacy](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-x86_64.sh))
+([Intel-Series](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-x86_64.sh))
 ([M-Series](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh)) 
 
 - Open your terminal by typing `terminal` in the Launchpad  
@@ -68,7 +68,7 @@ It is most likely located in your `Downloads` folder
 - Run the following command to install Miniforge:  
 
     ```bash
-    # legacy
+    # Intel-Series
     bash Miniforge3-MacOSX-x86_64.sh
     # M-Series
     bash Miniforge3-MacOSX-arm64.sh
@@ -105,18 +105,24 @@ It is most likely located in your `Downloads` folder
 
 ### 3. Execute Python scripts: 
 
-To execute Python scripts, identifiable by their `.py` extension, you can either type a command line in your terminal or use an Integrated Development Environment (IDE) such as Spyder to interact with the code. 
+To execute Python scripts, identifiable by their `.py` extension, you can either enter commands in your terminal or use an Integrated Development Environment (IDE) to directly interact with the code (preferred option). Here, we'll guide you on how to install and set up the **Spyder** IDE, which is a favorable choice for beginners.
 
-#### Spyder IDE
+- Open your terminal and activate your new environment:  
+    ```bash
+    conda activate {{ env_name }}
+    ```
 
-**Spyder** is an Integrated Development Environment (IDE), enabling users to easely execute and interact with Python scripts. Although not mandatory, Spyder is highly recommended for beginners.  
+- Install Spyder using pip:
+    ```bash
+    pip install spyder
+    ```
 
-- Activate your new environment and start Spyder using the following command:  
+- Launch spyder and wait for the graphical interface to appear:
     ```bash
     spyder
     ```
 
-- Create a new project from the Spyder interface:
+- Once in the interface, create a new project:
     - Click `Projects` > `New Project...`
     - Choose `Existing directory`
     - Select the downloaded GitHub repository using the folder icon
