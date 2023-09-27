@@ -103,7 +103,15 @@ It is most likely located in your `Downloads` folder
 
 </details> 
 
-### 3. Execute Python scripts with Spyder IDE: 
+### 3. Execute Python scripts: 
+
+To exectute a Python script start your terminal (or Miniforge prompt for Windows) 
+
+#### Command line 
+
+
+
+#### Spyder IDE
 
 **Spyder** is an Integrated Development Environment (IDE), enabling users to easely execute and interact with Python scripts. Although not mandatory, Spyder is highly recommended for beginners.  
 
