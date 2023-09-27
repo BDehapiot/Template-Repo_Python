@@ -105,11 +105,7 @@ It is most likely located in your `Downloads` folder
 
 ### 3. Execute Python scripts: 
 
-To exectute a Python script start your terminal (or Miniforge prompt for Windows) 
-
-#### Command line 
-
-
+To execute Python scripts, identifiable by their `.py` extension, you can either type a command line in your terminal or use an Integrated Development Environment (IDE) such as Spyder to interact with the code. 
 
 #### Spyder IDE
 
