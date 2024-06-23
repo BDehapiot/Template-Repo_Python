@@ -1,4 +1,4 @@
-name: Python-Lite
+name: Python-Lite-nogpu
 
 channels:
   - conda-forge
@@ -19,3 +19,6 @@ dependencies:
   - pip
   - pip:
     - napari[all]
+    - albumentations
+    - segmentation-models
+    - tensorflow==2.10
