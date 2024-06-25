@@ -8,5 +8,3 @@
 {{ main }}
 ## Installation
 {{ installation }}
-## Author
-Benoit Dehapiot, PhD, Image Data Analyst at ScopeM, ETH Zurich, Zurich

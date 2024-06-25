@@ -10,20 +10,24 @@ Template repository for simple Python-based projects
 ## Outputs
 ## Installation
 ### Step 1: Download GitHub Repository 
-- Click on the green `<> Code` button and download `ZIP` 
-- Unzip the downloaded file to a desired location
+- Click on the green `<> Code` button and `Download ZIP` 
+- Unzip the downloaded file at a desired location
 
-### Step 2: Install Miniforge
-- Download **Miniforge installer** for your operating system:  
-https://github.com/conda-forge/miniforge  
+### Step 2: Install Miniforge (Minimal Conda installer)
+- Download and install [Miniforge](https://github.com/conda-forge/miniforge) for your operating system  
+ 
 
-#### Windows
+<details> <summary>Windows</summary>  
+
 - Run the downloaded `.exe` file 
 - Select "Add Miniforge3 to PATH environment variable" 
 
-#### MacOS
+</details> 
+
+<details> <summary>MacOS</summary>  
+
 - Open your terminal
-- Move to the directory containing the **Miniforge installer**
+- Move to the directory containing the Miniforge installer
 - Run the following command:  
 
 ```bash
@@ -33,8 +37,10 @@ bash Miniforge3-MacOSX-x86_64.sh
 bash Miniforge3-MacOSX-arm64.sh
 ```  
 
+</details> 
+
 ### Step 3: Setup Conda Environment
-- Open the newly installed **Miniforge Prompt**
+- Open a newly installed Miniforge Prompt
 - Move to the downloaded GitHub repository
 - Run the following command: 
 
@@ -43,9 +49,9 @@ mamba env create -n Python-Lite -f environment.yml
 ```  
 
 ```bash
-# TensorFlow with GPU support
+# GPU support
 mamba env create -n Python-Lite -f environment-tf-gpu.yml
-# TensorFlow with no GPU support 
+# No GPU support 
 mamba env create -n Python-Lite -f environment-tf-nogpu.yml
 ```  
 
@@ -53,9 +59,3 @@ mamba env create -n Python-Lite -f environment-tf-nogpu.yml
 ```bash
 conda activate Python-Lite
 ```
-## Author
-**Benoit Dehapiot** - PhD  
-Image Data Analyst  
-<span style="color:red;">Image Data Analyst</span>  
-***ETH****zürich* - ScopeM  
-
