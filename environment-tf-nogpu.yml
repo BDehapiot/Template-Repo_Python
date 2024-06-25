@@ -1,5 +1,3 @@
-name: Python-Lite
-
 channels:
   - conda-forge
 
@@ -19,3 +17,6 @@ dependencies:
   - pip
   - pip:
     - napari[all]
+    - albumentations
+    - segmentation-models
+    - tensorflow==2.10

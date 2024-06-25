@@ -5,12 +5,8 @@
 
 # {{ repo_name }}
 {{ short_description }}
-## Description
-{{ description }}
+{{ main }}
 ## Installation
 {{ installation }}
-## Dependencies
-### Conda
-{{ conda_dependencies }}
-### pip
-{{ pip_dependencies }}
+## Author
+Benoit Dehapiot, PhD, Image Data Analyst at ScopeM, ETH Zurich, Zurich

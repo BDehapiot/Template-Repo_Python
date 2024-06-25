@@ -7,26 +7,56 @@ from pathlib import Path
 
 #%% Initialize ----------------------------------------------------------------
 
+# Paths
 root_path = Path(__file__).resolve().parents[1]
+utils_path = root_path / "utils"
 repo_name = root_path.name
 
+# Read config.yml
+with open(Path(root_path / "utils" / "config.yml"), 'r') as file:
+    config = yaml.safe_load(file)    
+env_name = config.get('env_name', [])[0]
+env_type = config.get('env_type', [])[0]
+install = config.get('install', [])[0]
+
+# Manage environment files
+if env_type == "base":
+    for path in list(root_path.glob("*environment*")):
+        if path.stem != "environment":
+            path.rename(utils_path / path.name)
+if env_type == "tf-gpu":
+    for path in list(root_path.glob("*environment*")):
+        if path.stem == "environment":
+            path.rename(utils_path / path.name)
+    for path in list(utils_path.glob("*environment*")):
+        if "-tf-" in path.stem :
+            path.rename(root_path / path.name)
+            
 #%% Read files ----------------------------------------------------------------
 
 # Read environment.yml
-with open(Path(root_path / "environment.yml"), 'r') as file:
-    environment = yaml.safe_load(file)
-
-# Read README_description.md
-with open(Path(root_path / "utils" / "README_description.md"), "r") as file:
-    description = file.read()
-
-# Read README_installation.md
-with open(Path(root_path / "utils" / "README_installation.md"), "r") as file:
-    installation = file.read()
+if env_type == "base":
+    with open(Path(root_path / "environment.yml"), 'r') as file:
+        environment = yaml.safe_load(file)
+if env_type == "tf-gpu":
+    with open(Path(root_path / "environment-tf-gpu.yml"), 'r') as file:
+        environment = yaml.safe_load(file)
 
 # Read README_template.md
-with open(Path(root_path / "utils" / "README_template.md"), "r") as file:
+with open(Path(utils_path / "README_template.md"), "r") as file:
     template = file.read()
+
+# Read README_main.md
+with open(Path(utils_path / "README_main.md"), "r") as file:
+    main = file.read()
+
+# Read README_installation.md
+if install == "full":
+    with open(Path(utils_path / "README_installation-full.md"), "r") as file:
+        installation = file.read()
+if install == "lite":
+    with open(Path(utils_path / "README_installation-lite.md"), "r") as file:
+        installation = file.read()
 
 #%% Extract relevant informations ---------------------------------------------
 
@@ -40,9 +70,6 @@ date = date.replace("-", "--")
 date = urllib.parse.quote(date)
 license = urllib.parse.quote(repo_data["license"]["name"])
 short_description = repo_data["description"]
-
-# Extract environment name
-env_name = environment.get('name', '')
 
 # Extract conda and pip dependencies
 conda_dependencies = []
@@ -73,10 +100,10 @@ template = template.replace("{{ python_version }}", python_version)
 template = template.replace("{{ license }}", license)
 template = template.replace("{{ date }}", date)
 template = template.replace("{{ short_description }}", short_description)
-template = template.replace("{{ description }}", description)
+template = template.replace("{{ main }}", main)
 template = template.replace("{{ installation }}", installation)
-template = template.replace("{{ conda_dependencies }}", conda_dependencies_str)
-template = template.replace("{{ pip_dependencies }}", pip_dependencies_str)
+# template = template.replace("{{ conda_dependencies }}", conda_dependencies_str)
+# template = template.replace("{{ pip_dependencies }}", pip_dependencies_str)
 
 #%% Update README -------------------------------------------------------------
 

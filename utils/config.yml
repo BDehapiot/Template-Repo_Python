@@ -1,0 +1,8 @@
+env_name:
+  - Python-Lite
+env_type:
+# base or tf-gpu
+  - tf-gpu
+install:
+# full or lite
+  - lite

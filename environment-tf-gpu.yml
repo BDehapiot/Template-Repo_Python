@@ -1,5 +1,3 @@
-name: Python-Lite-gpu
-
 channels:
   - conda-forge
 

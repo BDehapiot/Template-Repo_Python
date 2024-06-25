@@ -32,10 +32,10 @@ mamba env create -n {{ env_name }} -f environment.yml
 ```  
 
 ```bash
-# GPU support (NVIDIA)
-mamba env create -n {{ env_name }} -f environment-gpu.yml
-# no GPU support 
-mamba env create -n {{ env_name }} -f environment-nogpu.yml
+# TensorFlow with GPU support
+mamba env create -n {{ env_name }} -f environment-tf-gpu.yml
+# TensorFlow with no GPU support 
+mamba env create -n {{ env_name }} -f environment-tf-nogpu.yml
 ```  
 
 - Activate Conda environment:  
