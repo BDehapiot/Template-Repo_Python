@@ -1,5 +1,3 @@
-## Installation
-
 ### Step 1: Download GitHub Repository 
 - Click on the green `<> Code` button and download `ZIP` 
 - Unzip the downloaded file to a desired location
@@ -30,17 +28,17 @@ bash Miniforge3-MacOSX-arm64.sh
 - Run the following command: 
 
 ```bash
-mamba env create -n envname -f environment.yml
+mamba env create -n {{ env_name }} -f environment.yml
 ```  
 
 ```bash
 # GPU support (NVIDIA)
-mamba env create -n envname -f environment-gpu.yml
+mamba env create -n {{ env_name }} -f environment-gpu.yml
 # no GPU support 
-mamba env create -n envname -f environment-nogpu.yml
+mamba env create -n {{ env_name }} -f environment-nogpu.yml
 ```  
 
 - Activate Conda environment:  
 ```bash
-conda activate envname
+conda activate {{ env_name }}
 ```

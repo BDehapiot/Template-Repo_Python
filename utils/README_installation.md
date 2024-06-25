@@ -36,8 +36,15 @@ Select your operating system:
 
 - Create a new Conda environment (takes a few minutes): 
     ```bash
-    mamba env create -f environment.yml
-    ```
+    mamba env create -n {{ env_name }} -f environment.yml
+    ```  
+
+    ```bash
+    # GPU support (NVIDIA)
+    mamba env create -n {{ env_name }} -f environment-gpu.yml
+    # no GPU support 
+    mamba env create -n {{ env_name }} -f environment-nogpu.yml
+    ```  
 
 - Activate the new environment:
     ```bash
@@ -105,16 +112,11 @@ It is most likely located in your `Downloads` folder
 
 ### Execute Python scripts: 
 
-To execute Python scripts, identifiable by their `.py` extension, you can either enter commands in your terminal or use an Integrated Development Environment (IDE) to directly interact with the code (preferred option). Here, we'll guide you on how to install and set up the [Spyder](https://docs.spyder-ide.org/current/index.html) IDE, which is a favorable choice for beginners.
+To execute Python scripts, identifiable by their `.py` extension, you can either enter commands in your terminal or use an Integrated Development Environment (IDE) to directly interact with the code (preferred option). Here, we'll guide you on how to setup [Spyder](https://docs.spyder-ide.org/current/index.html) IDE, which is a favorable choice for beginners.
 
 - Open your terminal and activate your new environment:  
     ```bash
     conda activate {{ env_name }}
-    ```
-
-- Install Spyder using pip (only the first time):
-    ```bash
-    pip install spyder
     ```
 
 - Launch spyder and wait for the graphical interface to appear:
