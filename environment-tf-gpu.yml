@@ -1,8 +1,11 @@
+name:
+  - Python-Lite
+
 channels:
   - conda-forge
 
 dependencies:
-  - python=3.11
+  - python=3.10
   - numpy=1.24*
   - numba
   - scipy
@@ -14,11 +17,16 @@ dependencies:
   - matplotlib-base
   - cudatoolkit=11.2
   - cudnn=8.1
-  - pyyaml
-  - spyder
+  # ---
+  - test1=3.5.2
+  - test2
+  - test3=4.5
   - pip
   - pip:
     - napari[all]
     - albumentations
     - segmentation-models
     - tensorflow-gpu==2.10
+    # ---
+    - test4=4.5
+    - test5

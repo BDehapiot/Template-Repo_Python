@@ -1,10 +1,9 @@
-### Step 1: Download GitHub Repository 
+### Step 1: Download this GitHub Repository 
 - Click on the green `<> Code` button and download `ZIP` 
 - Unzip the downloaded file to a desired location
 
-### Step 2: Install Miniforge
-- Download **Miniforge installer** for your operating system:  
-https://github.com/conda-forge/miniforge  
+### Step 2: Install Miniforge (Minimal Conda installer)
+- Download and install [Miniforge](https://github.com/conda-forge/miniforge) for your operating system   
 
 #### Windows
 - Run the downloaded `.exe` file 
@@ -12,18 +11,20 @@ https://github.com/conda-forge/miniforge
 
 #### MacOS
 - Open your terminal
-- Move to the directory containing the **Miniforge installer**
+- Move to the directory containing the Miniforge installer
 - Run the following command:  
 
 ```bash
 # Intel-Series
 bash Miniforge3-MacOSX-x86_64.sh
+```  
+```bash
 # M-Series
 bash Miniforge3-MacOSX-arm64.sh
 ```  
 
 ### Step 3: Setup Conda Environment
-- Open the newly installed **Miniforge Prompt**
+- Open the newly installed Miniforge Prompt
 - Move to the downloaded GitHub repository
 - Run the following command: 
 
@@ -34,6 +35,8 @@ mamba env create -n {{ env_name }} -f environment.yml
 ```bash
 # TensorFlow with GPU support
 mamba env create -n {{ env_name }} -f environment-tf-gpu.yml
+```  
+```bash
 # TensorFlow with no GPU support 
 mamba env create -n {{ env_name }} -f environment-tf-nogpu.yml
 ```  
