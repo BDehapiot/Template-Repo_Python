@@ -79,8 +79,16 @@ for dependency in environment.get('dependencies', []):
         conda_dependencies.append(dependency)
         if dependency.startswith('python='):
             python_version = dependency.split('=')[1]
+        # if env_type == "tf-gpu":
+        #     if dependency.startswith('cudatoolkit='):
+        #         cuda_version = dependency.split('=')[1]
+        #     if dependency.startswith('cudnn='):
+        #         cudnn_version = dependency.split('=')[1]
     elif isinstance(dependency, dict) and 'pip' in dependency:
         pip_dependencies.extend(dependency['pip'])
+        # if env_type == "tf-gpu":
+        #     if dependency.startswith('tensorflow'):
+        #         cuda_version = dependency.split('=')[1]
 
 #%% Format and replace --------------------------------------------------------
 
@@ -107,6 +115,6 @@ template = template.replace("{{ installation }}", installation)
 
 #%% Update README -------------------------------------------------------------
 
-# Write README.md in root path
-with open(Path(root_path / "README.md"), "w") as file:
-    file.write(template)
+# # Write README.md in root path
+# with open(Path(root_path / "README.md"), "w") as file:
+#     file.write(template)

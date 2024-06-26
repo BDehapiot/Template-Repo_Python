@@ -1,4 +1,7 @@
 ![Python Badge](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=rgb(149%2C157%2C165)&labelColor=rgb(50%2C60%2C65))  
+![TensorFlow Badge](https://img.shields.io/badge/TensorFlow-2.10-green?logo=TensorFlow&logoColor=rgb(149%2C157%2C165)&labelColor=rgb(50%2C60%2C65))
+![CUDA Badge](https://img.shields.io/badge/CUDA-11.2-green?logo=NVIDIA&logoColor=rgb(149%2C157%2C165)&labelColor=rgb(50%2C60%2C65))
+![cuDNN Badge](https://img.shields.io/badge/cuDNN-8.1-green?logo=NVIDIA&logoColor=rgb(149%2C157%2C165)&labelColor=rgb(50%2C60%2C65))  
 ![Author Badge](https://img.shields.io/badge/Author-Benoit_Dehapiot-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))
 ![Date Badge](https://img.shields.io/badge/Created-2023--09--20-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))
 ![License Badge](https://img.shields.io/badge/Licence-GNU%20General%20Public%20License%20v3.0-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))    
@@ -16,7 +19,6 @@ Template repository for simple Python-based projects
 ### Step 2: Install Miniforge (Minimal Conda installer)
 - Download and install [Miniforge](https://github.com/conda-forge/miniforge) for your operating system  
  
-
 <details> <summary>Windows</summary>  
 
 - Run the downloaded `.exe` file 
