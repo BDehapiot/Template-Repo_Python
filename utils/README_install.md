@@ -11,19 +11,20 @@ Pease select your operating system
 ### Step 2: Install Miniforge (Minimal Conda installer)
 - Download and install [Miniforge](https://github.com/conda-forge/miniforge) for your operating system   
 - Run the downloaded `.exe` file  
-- Select "Add Miniforge3 to PATH environment variable"  
+    - Select "Add Miniforge3 to PATH environment variable"  
 
 ### Step 3: Setup Conda 
 - Open the newly installed Miniforge Prompt  
 - Move to the downloaded GitHub repository
 - Run the following command:  
 ```bash
-mamba env create -n {{ env_name }} -f environment.yml
+mamba env create -f environment.yml
 ```
 - Activate Conda environment:
 ```bash
 conda activate {{ env_name }}
 ```
+Your prompt should now start with `({{ env_name }})` instead of `(base)`
 
 </details> 
 
@@ -50,11 +51,12 @@ bash Miniforge3-MacOSX-arm64.sh
 - Move to the downloaded GitHub repository
 - Run the following command: 
 ```bash
-mamba env create -n {{ env_name }} -f environment.yml
+mamba env create -f environment.yml
 ```  
 - Activate Conda environment:  
 ```bash
 conda activate {{ env_name }}
 ```
+Your prompt should now start with `({{ env_name }})` instead of `(base)`
 
 </details>  

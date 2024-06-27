@@ -19,7 +19,14 @@ dependencies:
   - pip
   # conda_spec
   - spyder
+  # conda_tf_gpu
+  - cudatoolkit=11.2
+  - cudnn=8.1
   - pip:
     # pip_core
     - napari[all]
     # pip_spec
+    # pip_tf_gpu
+    - albumentations
+    - segmentation-models
+    - tensorflow-gpu==2.10

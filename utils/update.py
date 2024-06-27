@@ -1,6 +1,5 @@
 #%% Imports -------------------------------------------------------------------
 
-import re
 import urllib
 import requests
 from pathlib import Path
@@ -49,7 +48,7 @@ def update_environment(path):
     environment = environment.replace("{{ conda_spec }}", "".join(conda_spec))
     environment = environment.replace("{{ pip_core }}", "".join(pip_core))
     environment = environment.replace("{{ pip_spec }}", "".join(pip_spec))
-    if "gpu" in path.name:
+    if env_type == "tensorflow":
         environment = environment.replace("{{ conda_tf_gpu }}", "".join(conda_tf_gpu))
         environment = environment.replace("{{ conda_tf_nogpu }}", "".join(conda_tf_nogpu))
         environment = environment.replace("{{ pip_tf_gpu }}", "".join(pip_tf_gpu))
@@ -69,26 +68,33 @@ def update_template(path):
     with open(utils_path / "README_main.md") as file:
         main = file.read()
     template = template.replace("{{ python_version }}", python_version)
-    template = template.replace("{{ date }}", date)
+    template = template.replace("{{ author }}", author)
+    template = template.replace("{{ created }}", created)
     template = template.replace("{{ license }}", license)
     template = template.replace("{{ repo_name }}", repo_name)
     template = template.replace("{{ short_description }}", short_description)
     template = template.replace("{{ install }}", install) 
     template = template.replace("{{ main }}", main) 
+    if env_type == "tensorflow":
+        template = template.replace("{{ tf_version }}", tf_version)
+        template = template.replace("{{ cuda_version }}", cuda_version)
+        template = template.replace("{{ cudnn_version }}", cudnn_version)
     return template
 
 #%% Initialize ----------------------------------------------------------------
 
 # Parse INI config file
 config = ConfigParser()
-config.read(utils_path / 'config.ini')
-env_name = config['environment']['name']
-env_type = config['environment']['type']
-python_version = config['conda_core']['python']
+config.read(utils_path / "config.ini")
+env_name = config["environment"]["name"]
+env_type = config["environment"]["type"]
+python_version = config["conda_core"]["python"]
+author = config["repository"]["author"]
+author = urllib.parse.quote(author)
 if env_type == "tensorflow":
-    tf_version = config['pip_tf_gpu']['tensorflow-gpu'][1:]
-    cuda_version = config['conda_tf_gpu']['cudatoolkit']
-    cudnn_version = config['conda_tf_gpu']['cudnn']
+    tf_version = config["pip_tf_gpu"]["tensorflow-gpu"][1:]
+    cuda_version = config["conda_tf_gpu"]["cudatoolkit"]
+    cudnn_version = config["conda_tf_gpu"]["cudnn"]
 
 # Extract repository data
 repo_name = root_path.name
@@ -96,9 +102,13 @@ repo_data = requests.get(
     f"https://api.github.com/repos/BDehapiot/{repo_name}", 
     headers={}
     ).json()
-date = repo_data["created_at"][:10]
-date = date.replace("-", "--")
-date = urllib.parse.quote(date)
+if config["repository"]["created"] == "auto":
+    created = repo_data["created_at"][:10]
+    created = created.replace("-", "--")
+    created = urllib.parse.quote(created)
+else:
+    created = config["repository"]["created"]
+    created = created.replace("-", "--")
 license = urllib.parse.quote(repo_data["license"]["name"])
 short_description = repo_data["description"]
 
