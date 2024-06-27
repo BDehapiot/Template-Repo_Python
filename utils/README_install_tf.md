@@ -1,10 +1,3 @@
-![Python Badge](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=rgb(149%2C157%2C165)&labelColor=rgb(50%2C60%2C65))  
-![Author Badge](https://img.shields.io/badge/Author-Benoit_Dehapiot-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))
-![Date Badge](https://img.shields.io/badge/Created-2023--09--20-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))
-![License Badge](https://img.shields.io/badge/Licence-GNU%20General%20Public%20License%20v3.0-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))    
-
-# Template-Repo_Python-Lite  
-Template repository for simple Python-based projects  
 ## Installation
 
 Pease select your operating system
@@ -23,13 +16,16 @@ Pease select your operating system
 ### Step 3: Setup Conda 
 - Open the newly installed Miniforge Prompt  
 - Move to the downloaded GitHub repository
-- Run the following command:  
+- Run one of the following command:  
 ```bash
-mamba env create -n Python-Lite -f environment.yml
-```
+# TensorFlow with GPU support
+mamba env create -n {{ env_name }} -f environment-tf-gpu.yml
+# TensorFlow with no GPU support 
+mamba env create -n {{ env_name }} -f environment-tf-nogpu.yml
+```  
 - Activate Conda environment:
 ```bash
-conda activate Python-Lite
+conda activate {{ env_name }}
 ```
 
 </details> 
@@ -55,17 +51,16 @@ bash Miniforge3-MacOSX-arm64.sh
 ### Step 3: Setup Conda 
 - Re-open your terminal 
 - Move to the downloaded GitHub repository
-- Run the following command: 
+- Run one of the following command: 
 ```bash
-mamba env create -n Python-Lite -f environment.yml
+# TensorFlow with GPU support
+mamba env create -n {{ env_name }} -f environment-tf-gpu.yml
+# TensorFlow with no GPU support 
+mamba env create -n {{ env_name }} -f environment-tf-nogpu.yml
 ```  
 - Activate Conda environment:  
 ```bash
-conda activate Python-Lite
+conda activate {{ env_name }}
 ```
 
 </details>  
-  
-## Content
-
-## Outputs  

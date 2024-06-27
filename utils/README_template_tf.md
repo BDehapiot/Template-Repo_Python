@@ -3,7 +3,7 @@
 ![Date Badge](https://img.shields.io/badge/Created-{{ date }}-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))
 ![License Badge](https://img.shields.io/badge/Licence-{{ license }}-blue?labelColor=rgb(50%2C60%2C65)&color=rgb(149%2C157%2C165))    
 
-# {{ repo_name }}  
-{{ short_description }}  
-{{ install }}  
-{{ main }}  
+# {{ repo_name }}
+{{ short_description }}
+{{ main }}
+{{ install }}

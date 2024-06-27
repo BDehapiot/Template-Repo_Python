@@ -1,5 +1,6 @@
 #%% Imports -------------------------------------------------------------------
 
+import re
 import urllib
 import requests
 from pathlib import Path
@@ -10,55 +11,71 @@ from configparser import ConfigParser
 # Paths
 root_path = Path(__file__).resolve().parents[1]
 utils_path = root_path / "utils"
-repo_name = root_path.name
 
 #%% Functions -----------------------------------------------------------------
 
-def format_dependencies(dependencies, indent=2):
-    dependencies = [f"\n{' ' * indent}- " + dep for dep in dependencies]
-    dependencies = "".join(dependencies)
-    return dependencies
+def format_dependencies(item):
+    dependency_list = []
+    for key, value in config.items(item):
+        if key:            
+            if "conda" in item: 
+                ident = " " * 2
+                if value: dependency_list.append(f"\n{ident}- {key}={value}")
+                else: dependency_list.append(f"\n{ident}- {key}")            
+            if "pip" in item:
+                ident = " " * 4
+                if value: dependency_list.append(f"\n{ident}- {key}={value}")
+                else: dependency_list.append(f"\n{ident}- {key}")
+        else: dependency_list = ""
+    return dependency_list
 
-def update_environment(path):    
-       
-    # Read YML environment file
+def update_environment(path):
+    
+    # Format dependencies
+    conda_core = format_dependencies("conda_core")
+    conda_spec = format_dependencies("conda_spec")
+    pip_core = format_dependencies("pip_core")
+    pip_spec = format_dependencies("pip_spec")
+    if env_type == "tensorflow":
+        conda_tf_gpu = format_dependencies("conda_tf_gpu")
+        conda_tf_nogpu = format_dependencies("conda_tf_nogpu")
+        pip_tf_gpu = format_dependencies("pip_tf_gpu")
+        pip_tf_nogpu = format_dependencies("pip_tf_nogpu")
+    
     with open(path, "r") as file:
         environment = file.read()
-        
-    # Replace placeholders
-    environment = environment.replace("{{ env_name }}", env_name)
-    environment = environment.replace("{{ python_version }}", python_version)
-    environment = environment.replace("{{ dep_conda }}", dep_conda)
-    environment = environment.replace("{{ dep_pip }}", dep_pip)
+    environment = environment.replace("{{ env_name }}", "".join(env_name))
+    environment = environment.replace("{{ conda_core }}", "".join(conda_core))
+    environment = environment.replace("{{ conda_spec }}", "".join(conda_spec))
+    environment = environment.replace("{{ pip_core }}", "".join(pip_core))
+    environment = environment.replace("{{ pip_spec }}", "".join(pip_spec))
+    if "gpu" in path.name:
+        environment = environment.replace("{{ conda_tf_gpu }}", "".join(conda_tf_gpu))
+        environment = environment.replace("{{ conda_tf_nogpu }}", "".join(conda_tf_nogpu))
+        environment = environment.replace("{{ pip_tf_gpu }}", "".join(pip_tf_gpu))
+        environment = environment.replace("{{ pip_tf_nogpu }}", "".join(pip_tf_nogpu))
     
-    # Save YML environment file
-    with open(root_path / path.name, "w") as file:
-        file.write(environment)
-  
-def update_readme():
-    
-    # Read MD Readme files
-    with open(Path(utils_path / f"README_install-{rdm_install}.md"), "r") as file:
+    return environment
+
+def update_install(path):
+    with open(path, "r") as file:
         install = file.read()
-    with open(Path(utils_path / "README_main.md"), "r") as file:
-        main = file.read()
-    with open(Path(utils_path / "README_template.md"), "r") as file:
-        template = file.read()
-        
-    # Replace placeholders
-    install = install.replace("{{ repo_name }}", repo_name)
     install = install.replace("{{ env_name }}", env_name)
-    template = template.replace("{{ repo_name }}", repo_name)
+    return install
+
+def update_template(path):
+    with open(path, "r") as file:
+        template = file.read()
+    with open(utils_path / "README_main.md") as file:
+        main = file.read()
     template = template.replace("{{ python_version }}", python_version)
-    template = template.replace("{{ license }}", license)
     template = template.replace("{{ date }}", date)
+    template = template.replace("{{ license }}", license)
+    template = template.replace("{{ repo_name }}", repo_name)
     template = template.replace("{{ short_description }}", short_description)
-    template = template.replace("{{ main }}", main)
-    template = template.replace("{{ install }}", install)
-    
-    # Save MD Readme file
-    with open(Path(root_path / "README.md"), "w") as file:
-        file.write(template)  
+    template = template.replace("{{ install }}", install) 
+    template = template.replace("{{ main }}", main) 
+    return template
 
 #%% Initialize ----------------------------------------------------------------
 
@@ -67,20 +84,14 @@ config = ConfigParser()
 config.read(utils_path / 'config.ini')
 env_name = config['environment']['name']
 env_type = config['environment']['type']
-python_version = config['python']['version']
-dep_conda = config['dependencies']['conda'].split(', ')
-dep_pip = config['dependencies']['pip'].split(', ')
-rdm_install = config['readme']['install']
-
-# Format dependencies
-if dep_conda[0] != "None": 
-    dep_conda = format_dependencies(dep_conda, indent=2)
-else: dep_conda = ""
-if dep_pip[0] != "None": 
-    dep_pip = format_dependencies(dep_pip, indent=4)
-else: dep_pip = ""
+python_version = config['conda_core']['python']
+if env_type == "tensorflow":
+    tf_version = config['pip_tf_gpu']['tensorflow-gpu'][1:]
+    cuda_version = config['conda_tf_gpu']['cudatoolkit']
+    cudnn_version = config['conda_tf_gpu']['cudnn']
 
 # Extract repository data
+repo_name = root_path.name
 repo_data = requests.get(
     f"https://api.github.com/repos/BDehapiot/{repo_name}", 
     headers={}
@@ -92,6 +103,17 @@ license = urllib.parse.quote(repo_data["license"]["name"])
 short_description = repo_data["description"]
 
 #%% Execute -------------------------------------------------------------------
+  
+# Update files
+if env_type == "base":
+    environment = update_environment(utils_path / "environment.yml")
+    install = update_install(utils_path / "README_install.md")
+    template = update_template(utils_path / "README_template.md")
+elif env_type == "tensorflow":
+    environment_tf_gpu = update_environment(utils_path / "environment_tf_gpu.yml")
+    environment_tf_nogpu = update_environment(utils_path / "environment_tf_nogpu.yml")
+    install = update_install(utils_path / "README_install_tf.md")
+    template = update_template(utils_path / "README_template_tf.md")
 
 # Remove preexisting files
 for path in list(root_path.glob("*environment*")):
@@ -99,10 +121,14 @@ for path in list(root_path.glob("*environment*")):
 for path in list(root_path.glob("*readme*")):
     path.unlink()
 
-# Update files
+# Save file
 if env_type == "base":
-    update_environment(utils_path / "environment.yml")
-if env_type == "tf-gpu":
-    update_environment(utils_path / "environment-tf-gpu.yml")
-    update_environment(utils_path / "environment-tf-nogpu.yml")
-update_readme()
+    with open(Path(root_path / "environment.yml"), "w") as file:
+        file.write(environment)
+elif env_type == "tensorflow":
+    with open(Path(root_path / "environment_tf_gpu.yml"), "w") as file:
+        file.write(environment_tf_gpu)
+    with open(Path(root_path / "environment_tf_nogpu.yml"), "w") as file:
+        file.write(environment_tf_nogpu)
+with open(Path(root_path / "README.md"), "w") as file:
+    file.write(template) 
