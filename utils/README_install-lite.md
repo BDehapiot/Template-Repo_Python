@@ -6,8 +6,8 @@
 - Download and install [Miniforge](https://github.com/conda-forge/miniforge) for your operating system   
 
 #### Windows
-- Run the downloaded `.exe` file 
-- Select "Add Miniforge3 to PATH environment variable" 
+- Run the downloaded `.exe` file  
+⚠️ Select "Add Miniforge3 to PATH environment variable" 
 
 #### MacOS
 - Open your terminal
