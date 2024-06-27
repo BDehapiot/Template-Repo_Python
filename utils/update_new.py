@@ -1,5 +1,6 @@
 #%% Imports -------------------------------------------------------------------
 
+import re
 import urllib
 import requests
 from pathlib import Path
@@ -17,18 +18,18 @@ repo_name = root_path.name
 def parse_dependencies(item):
     dependency_list = []
     for key, value in config.items(item):
-        if key:
+        if key:            
             if "conda" in item:
                 ident = " " * 2
-                if value:
+                if value: 
                     dependency_list.append(f"\n{ident}- {key}={value}")
-                else:
-                    dependency_list.append(f"\n{ident}- {key}")
+                else: 
+                    dependency_list.append(f"\n{ident}- {key}")            
             if "pip" in item:
                 ident = " " * 4
-                if value:
+                if value: 
                     dependency_list.append(f"\n{ident}- {key}={value}")
-                else:
+                else: 
                     dependency_list.append(f"\n{ident}- {key}")
         else:
             dependency_list = ""
@@ -37,6 +38,7 @@ def parse_dependencies(item):
 def update_environment(path):
     with open(path, "r") as file:
         environment = file.read()
+    environment = environment.replace("{{ env_name }}", "".join(env_name))
     environment = environment.replace("{{ conda_core }}", "".join(conda_core))
     environment = environment.replace("{{ conda_spec }}", "".join(conda_spec))
     environment = environment.replace("{{ pip_core }}", "".join(pip_core))
@@ -48,6 +50,11 @@ def update_environment(path):
         environment = environment.replace("{{ pip_tf_nogpu }}", "".join(pip_tf_nogpu))
     return environment
 
+def update_install(path):
+    with open(path, "r") as file:
+        install = file.read()
+    return install
+
 #%% Initialize ----------------------------------------------------------------
 
 # Parse INI config file
@@ -56,6 +63,7 @@ config.read(utils_path / 'config.ini')
 env_name = config['environment']['name']
 env_type = config['environment']['type']
 rdm_install = config['readme']['install']
+test = config["install"]["conda_base"]
 
 #%% Execute -------------------------------------------------------------------
 
@@ -70,7 +78,7 @@ if env_type == "tensorflow":
     pip_tf_gpu = parse_dependencies("pip_tf_gpu")
     pip_tf_nogpu = parse_dependencies("pip_tf_nogpu")
     
-# Replace placeholders
+# Update YML environment files
 if env_type == "base":
     environment = update_environment(utils_path / "environment.yml")
 elif env_type == "tensorflow":
@@ -78,5 +86,9 @@ elif env_type == "tensorflow":
         utils_path / "environment_tf_gpu.yml")
     environment_tf_nogpu = update_environment(
         utils_path / "environment_tf_nogpu.yml")
+
+# Update MD readme files
+if rdm_install == "lite":
+    install = update_install(utils_path / "README_install-lite.md")
     
-    
+
