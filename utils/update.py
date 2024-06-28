@@ -113,6 +113,13 @@ license = urllib.parse.quote(repo_data["license"]["name"])
 short_description = repo_data["description"]
 
 #%% Execute -------------------------------------------------------------------
+
+# Remove preexisting files
+for path in list(root_path.glob("*environment*")):
+    path.unlink()
+for path in list(root_path.glob("*readme*")):
+    path.unlink()
+
   
 # Update files
 if env_type == "base":
@@ -125,13 +132,7 @@ elif env_type == "tensorflow":
     install = update_install(utils_path / "README_install_tf.md")
     template = update_template(utils_path / "README_template_tf.md")
 
-# Remove preexisting files
-for path in list(root_path.glob("*environment*")):
-    path.unlink()
-for path in list(root_path.glob("*readme*")):
-    path.unlink()
-
-# Save file
+# Save files
 if env_type == "base":
     with open(Path(root_path / "environment.yml"), "w") as file:
         file.write(environment)
