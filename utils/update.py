@@ -1,7 +1,6 @@
 #%% Imports -------------------------------------------------------------------
 
 import urllib
-import requests
 from pathlib import Path
 from configparser import ConfigParser
 
@@ -72,7 +71,7 @@ def update_template(path):
     template = template.replace("{{ created }}", created)
     template = template.replace("{{ license }}", license)
     template = template.replace("{{ repo_name }}", repo_name)
-    template = template.replace("{{ short_description }}", short_description)
+    template = template.replace("{{ description }}", description)
     template = template.replace("{{ install }}", install) 
     template = template.replace("{{ main }}", main) 
     if env_type == "tensorflow":
@@ -86,31 +85,21 @@ def update_template(path):
 # Parse INI config file
 config = ConfigParser()
 config.read(utils_path / "config.ini")
+repo_name = root_path.name
 env_name = config["environment"]["name"]
 env_type = config["environment"]["type"]
 python_version = config["conda_core"]["python"]
 author = config["repository"]["author"]
 author = urllib.parse.quote(author)
+created = config["repository"]["created"].replace("-", "--")
+created = urllib.parse.quote(created)
+license = config["repository"]["license"]
+license = urllib.parse.quote(license)
+description = config["repository"]["description"]
 if env_type == "tensorflow":
     tf_version = config["pip_tf_gpu"]["tensorflow-gpu"][1:]
     cuda_version = config["conda_tf_gpu"]["cudatoolkit"]
     cudnn_version = config["conda_tf_gpu"]["cudnn"]
-
-# Extract repository data
-repo_name = root_path.name
-repo_data = requests.get(
-    f"https://api.github.com/repos/BDehapiot/{repo_name}", 
-    headers={}
-    ).json()
-if config["repository"]["created"] == "auto":
-    created = repo_data["created_at"][:10]
-    created = created.replace("-", "--")
-    created = urllib.parse.quote(created)
-else:
-    created = config["repository"]["created"]
-    created = created.replace("-", "--")
-license = urllib.parse.quote(repo_data["license"]["name"])
-short_description = repo_data["description"]
 
 #%% Execute -------------------------------------------------------------------
 
@@ -119,7 +108,6 @@ for path in list(root_path.glob("*environment*")):
     path.unlink()
 for path in list(root_path.glob("*readme*")):
     path.unlink()
-
   
 # Update files
 if env_type == "base":
