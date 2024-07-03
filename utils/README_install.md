@@ -59,4 +59,4 @@ conda activate {{ env_name }}
 ```
 Your prompt should now start with `({{ env_name }})` instead of `(base)`
 
-</details>  
+</details>
