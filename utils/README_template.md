@@ -5,5 +5,5 @@
 
 # {{ repo_name }}  
 {{ description }}  
-{{ main }}  
 {{ install }}  
+{{ main }}  
