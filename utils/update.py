@@ -30,28 +30,28 @@ def format_dependencies(item):
 def update_environment(path):
     
     # Format dependencies
-    conda_core = format_dependencies("conda_core")
-    conda_spec = format_dependencies("conda_spec")
-    pip_core = format_dependencies("pip_core")
-    pip_spec = format_dependencies("pip_spec")
-    if env_type == "tensorflow":
-        conda_tf_gpu = format_dependencies("conda_tf_gpu")
-        conda_tf_nogpu = format_dependencies("conda_tf_nogpu")
-        pip_tf_gpu = format_dependencies("pip_tf_gpu")
-        pip_tf_nogpu = format_dependencies("pip_tf_nogpu")
+    conda_core = format_dependencies("conda-core")
+    conda_spec = format_dependencies("conda-spec")
+    pip_core = format_dependencies("pip-core")
+    pip_spec = format_dependencies("pip-spec")
+    if env_type == "tf":
+        conda_tf_gpu = format_dependencies("conda_tf-gpu")
+        conda_tf_nogpu = format_dependencies("conda_tf-nogpu")
+        pip_tf_gpu = format_dependencies("pip_tf-gpu")
+        pip_tf_nogpu = format_dependencies("pip_tf-nogpu")
     
     with open(path, "r") as file:
         environment = file.read()
     environment = environment.replace("{{ env_name }}", "".join(env_name))
-    environment = environment.replace("{{ conda_core }}", "".join(conda_core))
-    environment = environment.replace("{{ conda_spec }}", "".join(conda_spec))
-    environment = environment.replace("{{ pip_core }}", "".join(pip_core))
-    environment = environment.replace("{{ pip_spec }}", "".join(pip_spec))
-    if env_type == "tensorflow":
-        environment = environment.replace("{{ conda_tf_gpu }}", "".join(conda_tf_gpu))
-        environment = environment.replace("{{ conda_tf_nogpu }}", "".join(conda_tf_nogpu))
-        environment = environment.replace("{{ pip_tf_gpu }}", "".join(pip_tf_gpu))
-        environment = environment.replace("{{ pip_tf_nogpu }}", "".join(pip_tf_nogpu))
+    environment = environment.replace("{{ conda-core }}", "".join(conda_core))
+    environment = environment.replace("{{ conda-spec }}", "".join(conda_spec))
+    environment = environment.replace("{{ pip-core }}", "".join(pip_core))
+    environment = environment.replace("{{ pip-spec }}", "".join(pip_spec))
+    if env_type == "tf":
+        environment = environment.replace("{{ conda_tf-gpu }}", "".join(conda_tf_gpu))
+        environment = environment.replace("{{ conda_tf-nogpu }}", "".join(conda_tf_nogpu))
+        environment = environment.replace("{{ pip_tf-gpu }}", "".join(pip_tf_gpu))
+        environment = environment.replace("{{ pip_tf-nogpu }}", "".join(pip_tf_nogpu))
     
     return environment
 
@@ -82,7 +82,7 @@ def update_template(path):
     template = template.replace("{{ install }}", install)
     template = template.replace("{{ main }}", main)
     template = template.replace("{{ comments }}", comments)
-    if env_type == "tensorflow":
+    if env_type == "tf":
         template = template.replace("{{ tf_version }}", tf_version)
         template = template.replace("{{ cuda_version }}", cuda_version)
         template = template.replace("{{ cudnn_version }}", cudnn_version)
@@ -109,7 +109,7 @@ config.read(utils_path / "config.ini")
 repo_name = root_path.name
 env_name = config["environment"]["name"]
 env_type = config["environment"]["type"]
-python_version = config["conda_core"]["python"]
+python_version = config["conda-core"]["python"]
 author = config["repository"]["author"]
 author = urllib.parse.quote(author)
 created = config["repository"]["created"].replace("-", "--")
@@ -117,10 +117,10 @@ created = urllib.parse.quote(created)
 license = config["repository"]["license"]
 license = urllib.parse.quote(license)
 description = config["repository"]["description"]
-if env_type == "tensorflow":
-    tf_version = config["pip_tf_gpu"]["tensorflow-gpu"][1:]
-    cuda_version = config["conda_tf_gpu"]["cudatoolkit"]
-    cudnn_version = config["conda_tf_gpu"]["cudnn"]
+if env_type == "tf":
+    tf_version = config["pip_tf-gpu"]["tensorflow-gpu"][1:]
+    cuda_version = config["conda_tf-gpu"]["cudatoolkit"]
+    cudnn_version = config["conda_tf-gpu"]["cudnn"]
 
 #%% Execute -------------------------------------------------------------------
 
@@ -136,9 +136,9 @@ if env_type == "base":
     main = update_main(utils_path / "README_main.md")
     install = update_install(utils_path / "README_install.md")
     template = update_template(utils_path / "README_template.md")
-elif env_type == "tensorflow":
-    environment_tf_gpu = update_environment(utils_path / "environment_tf_gpu.yml")
-    environment_tf_nogpu = update_environment(utils_path / "environment_tf_nogpu.yml")
+elif env_type == "tf":
+    environment_tf_gpu = update_environment(utils_path / "environment_tf-gpu.yml")
+    environment_tf_nogpu = update_environment(utils_path / "environment_tf-nogpu.yml")
     main = update_main(utils_path / "README_main.md")
     install = update_install(utils_path / "README_install_tf.md")
     template = update_template(utils_path / "README_template_tf.md")
@@ -147,10 +147,10 @@ elif env_type == "tensorflow":
 if env_type == "base":
     with open(Path(root_path / "environment.yml"), "w") as file:
         file.write(environment)
-elif env_type == "tensorflow":
-    with open(Path(root_path / "environment_tf_gpu.yml"), "w") as file:
+elif env_type == "tf":
+    with open(Path(root_path / "environment_tf-gpu.yml"), "w") as file:
         file.write(environment_tf_gpu)
-    with open(Path(root_path / "environment_tf_nogpu.yml"), "w") as file:
+    with open(Path(root_path / "environment_tf-nogpu.yml"), "w") as file:
         file.write(environment_tf_nogpu)
 with open(Path(root_path / "README.md"), "w") as file:
     file.write(template)
